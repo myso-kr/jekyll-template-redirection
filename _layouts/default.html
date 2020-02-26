@@ -3,7 +3,8 @@
   <head>
     <script>
       var redirection_url = "{{ site.redirection_url }}" + location.pathname;
-      if(location.search) redirection_url += "?" + location.search;
+      redirection_url += "?proxyReferer=" + document.referrer;
+      if(location.search) redirection_url += "&" + location.search;
       window.location.replace(redirection_url);
     </script>
   </head>
