@@ -1,9 +1,6 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <script>
-      var redirection_url = "{{ site.redirection_url }}" + location.pathname + "?proxyReferer=" + document.referrer + location.search.replace(/^\?/, '&');
-      window.location.replace(redirection_url);
-    </script>
+    <script>window.location.replace("{{ site.redirection_url }}" + location.pathname.replace(/\/$/, '') + "?proxyReferer=" + document.referrer + location.search.replace(/^\?/, '&'));</script>
   </head>
 </html>
